@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mes Patrio - Presentación Independencia de México</title>
+    <!-- Fuente Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ==========================================
+           VARIABLES Y PALETA DE COLORES PATRIOS
+           ========================================== */
+        :root {
+            --verde-patrio: #006847;
+            --verde-oscuro: #004d34;
+            --blanco-neutro: #ffffff;
+            --rojo-patrio: #CE1126;
+            --rojo-oscuro: #a00d1e;
+            --gris-fondo: #f4f5f7;
+            --gris-tarjeta: #ffffff;
+            --texto-principal: #2B2B2B;
+            --texto-secundario: #555555;
+            --dorado-marco: #c59b27;
+            --sombra-elegante: 0 8px 20px rgba(0, 0, 0, 0.08);
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--gris-fondo);
+            color: var(--texto-principal);
+            line-height: 1.6;
+        }
+
+        /* ==========================================
+           NAVEGACIÓN FIJA
+           ========================================== */
+        header {
+            background-color: var(--blanco-neutro);
+            border-bottom: 4px solid var(--verde-patrio);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--sombra-elegante);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--verde-patrio);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--rojo-patrio);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--texto-principal);
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: var(--transicion);
+        }
+
+        nav a:hover {
+            color: var(--rojo-patrio);
+        }
+
+        /* ==========================================
+           HERO / PORTADA (SLIDE 1)
+           ========================================== */
+        .hero {
+            background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde-patrio) 50%, var(--rojo-patrio) 100%);
+            color: white;
+            text-align: center;
+            padding: 5rem 1.5rem;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 10px;
+            background: linear-gradient(to right, var(--verde-patrio) 33%, white 33%, white 66%, var(--rojo-patrio) 66%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #f0f0f0;
+            margin-bottom: 2rem;
+        }
+
+        .autor-box {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(5px);
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .autor-box p {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0.2rem 0;
+        }
+
+        /* ==========================================
+           CONTENEDORES Y SECCIONES
+           ========================================== */
+        section {
+            max-width: 1100px;
+            margin: 4rem auto;
+            padding: 0 1.5rem;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--verde-patrio);
+            margin-bottom: 3rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .titulo-seccion::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 4px;
+            background: var(--rojo-patrio);
+            margin: 0.8rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* ==========================================
+           LÍNEA DE TIEMPO (SLIDE 2)
+           ========================================== */
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: 0 auto;
+            border-left: 4px solid var(--verde-patrio);
+            padding-left: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2.5rem;
+            background: var(--blanco-neutro);
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: var(--sombra-elegante);
+            border-right: 5px solid var(--rojo-patrio);
+            transition: var(--transicion);
+        }
+
+        .timeline-item:hover {
+            transform: translateX(5px);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -2.65rem;
+            top: 1.8rem;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--rojo-patrio);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--verde-patrio);
+        }
+
+        .fecha {
+            display: inline-block;
+            font-weight: 800;
+            color: var(--verde-patrio);
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            background-color: #e8f5e9;
+            padding: 0.2rem 0.8rem;
+            border-radius: 20px;
+        }
+
+        .timeline-item h3 {
+            font-size: 1.3rem;
+            color: var(--texto-principal);
+            margin-bottom: 0.5rem;
+        }
+
+        /* ==========================================
+           PERSONAJES PRINCIPALES (SLIDE 3)
+           ========================================== */
+        .grid-personajes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+        }
+
+        .card-personaje {
+            background: var(--blanco-neutro);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--sombra-elegante);
+            text-align: center;
+            border-top: 6px solid var(--verde-patrio);
+            padding: 1.5rem;
+            transition: var(--transicion);
+        }
+
+        .card-personaje:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--rojo-patrio);
+        }
+
+        .periodo {
+            display: inline-block;
+            background-color: var(--rojo-patrio);
+            color: white;
+            font-weight: 700;
+            font-size: 0.85rem;
+            padding: 0.2rem 0.8rem;
+            border-radius: 15px;
+            margin-bottom: 1rem;
+        }
+
+        .card-personaje h3 {
+            color: var(--verde-patrio);
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            min-height: 2.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-personaje p {
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+        }
+
+        /* ==========================================
+           BIOGRAFÍAS DETALLADAS (SLIDES 4 - 7)
+           ========================================== */
+        .bio-card {
+            background: var(--blanco-neutro);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 3rem;
+            box-shadow: var(--sombra-elegante);
+            border-left: 8px solid var(--verde-patrio);
+            position: relative;
+        }
+
+        .bio-card:nth-child(even) {
+            border-left-color: var(--rojo-patrio);
+        }
+
+        .bio-card h3 {
+            font-size: 1.6rem;
+            color: var(--verde-patrio);
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+        }
+
+        .bio-card:nth-child(even) h3 {
+            color: var(--rojo-patrio);
+        }
+
+        .subtitulo-bio {
+            font-weight: 700;
+            color: #777;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        .bio-list {
+            list-style: none;
+        }
+
+        .bio-list li {
+            position: relative;
+            padding-left: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--texto-principal);
+        }
+
+        .bio-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--verde-patrio);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .bio-card:nth-child(even) .bio-list li::before {
+            color: var(--rojo-patrio);
+        }
+
+        .bio-list strong {
+            color: #000;
+        }
+
+        /* ==========================================
+           MITOS Y DATOS CURIOSOS (SLIDE 8)
+           ========================================== */
+        .mitos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .mito-card {
+            background-color: var(--blanco-neutro);
+            padding: 1.8rem;
+            border-radius: 10px;
+            border-top: 5px solid var(--rojo-patrio);
+            box-shadow: var(--sombra-elegante);
+            transition: var(--transicion);
+        }
+
+        .mito-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mito-card h4 {
+            color: var(--rojo-patrio);
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .mito-card p {
+            font-size: 0.95rem;
+            color: var(--texto-secundario);
+        }
+
+        /* ==========================================
+           FOOTER
+           ========================================== */
+        footer {
+            background-color: var(--blanco-neutro);
+            text-align: center;
+            padding: 2.5rem 1rem;
+            border-top: 6px solid var(--verde-patrio);
+            margin-top: 5rem;
+        }
+
+        footer p {
+            font-weight: 600;
+            color: var(--texto-secundario);
+            margin: 0.3rem 0;
+        }
+
+        /* ==========================================
+           DISEÑO RESPONSIVO
+           ========================================== */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+
+            .hero h2 {
+                font-size: 1.3rem;
+            }
+
+            .timeline {
+                padding-left: 1.5rem;
+            }
+
+            .timeline-item::before {
+                left: -2.15rem;
+            }
+
+            .bio-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">Mes <span>Patrio</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#linea-tiempo">Línea de Tiempo</a></li>
+                    <li><a href="#personajes">Personajes</a></li>
+                    <li><a href="#biografias">Biografías</a></li>
+                    <li><a href="#mitos">Mitos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PORTADA (SLIDE 1) -->
+    <div class="hero">
+        <h1>MES PATRIO</h1>
+        <h2>SEPTIEMBRE</h2>
+        <div class="autor-box">
+            <p><strong>POR:</strong> MADRID DE LA CRUZ VALERIA DAYANA</p>
+            <p><strong>NO:</strong> 24308051280862</p>
+        </div>
+    </div>
+
+    <!-- LÍNEA DE TIEMPO (SLIDE 2) -->
+    <section id="linea-tiempo">
+        <h2 class="titulo-seccion">Línea de Tiempo</h2>
+        <div class="timeline">
+            
+            <div class="timeline-item">
+                <span class="fecha">13 de septiembre de 1847</span>
+                <h3>Batalla de Chapultepec</h3>
+                <p>Gesta heroica en la que cadetes del Colegio Militar defendieron el Castillo de Chapultepec frente a la invasión del ejército estadounidense.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="fecha">15 de septiembre de 1810</span>
+                <h3>Conmemoración del Grito</h3>
+                <p>Se realiza la ceremonia del Grito de Independencia en todos los ayuntamientos y Palacio Nacional, rememorando el llamado a las armas hecho por Miguel Hidalgo.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="fecha">16 de septiembre de 1810</span>
+                <h3>Inicio de la Independencia</h3>
+                <p>Fecha oficial del estallido de la Guerra de Independencia tras el pronunciamiento en el pueblo de Dolores, Guanajuato. Se celebra con el tradicional Desfile Militar.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="fecha">19 de septiembre de 1985 y 2017</span>
+                <h3>Día Nacional de la Protección Civil</h3>
+                <p>Conmemoración en honor a las víctimas de los sismos de 1985 y 2017. Se realiza el Simulacro Nacional para fomentar la cultura de prevención.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="fecha">27 de septiembre de 1821</span>
+                <h3>Consumación de la Independencia</h3>
+                <p>El Ejército Trigarante, encabezado por Agustín de Iturbide y Vicente Guerrero, entra triunfalmente a la Ciudad de México, dando fin a 11 años de guerra.</p>
+            </div>
+
+            <div class="timeline-item">
+                <span class="fecha">30 de septiembre de 1765</span>
+                <h3>Natalicio de José María Morelos</h3>
+                <p>Nacimiento de José María Morelos y Pavón, el "Siervo de la Nación", militar y estratega clave de la segunda etapa insurgente.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PERSONAJES PRINCIPALES (SLIDE 3) -->
+    <section id="personajes">
+        <h2 class="titulo-seccion">Personajes Principales</h2>
+        <div class="grid-personajes">
+            
+            <div class="card-personaje">
+                <span class="periodo">1753 - 1811</span>
+                <h3>Miguel Hidalgo y Costilla</h3>
+                <img src="Miguel_Hidalgo.jpg" alt="Retrato de Miguel Hidalgo">
+                <p>Conocido como el Padre de la Patria. Cura erudito e ilustrado que encabezó el levantamiento popular en 1810.</p>
+            </div>
+
+            <div class="card-personaje">
+                <span class="periodo">1765 - 1815</span>
+                <h3>José María Morelos y Pavón</h3>
+                <img src="Jose_Maria_Pavon.jpg" alt="José María Morelos y Pavón">
+                <p>Conocido como el "Siervo de la Nación", fue un sacerdote, militar y político novohispano que asumió el liderazgo de la Guerra de Independencia de México tras la muerte de Miguel Hidalgo.</p>
+            </div>
+
+            <div class="card-personaje">
+                <span class="periodo">1768 - 1829</span>
+                <h3>Josefa Ortiz de Domínguez</h3>
+                <img src="josefa_ortiz_de_domínguez.jpg" alt="Retrato de josefa ortiz de domínguez">
+                <p>La Corregidora de Querétaro. Pieza clave de la Conspiración de Querétaro que avisó a los insurgentes que la trama había sido descubierta, adelantando el inicio de la lucha.</p>
+            </div>
+
+            <div class="card-personaje">
+                <span class="periodo">1782 - 1831</span>
+                <h3>Vicente Guerrero</h3>
+                <img src="Vicente_Guerrero.jpg" alt="Vicente Guerrero">
+                <p>General que mantuvo viva la chispa de la resistencia insurgente en las montañas del sur y pactó la paz para lograr la consumación independentista.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- BIOGRAFÍAS DETALLADAS (SLIDES 4 A 7) -->
+    <section id="biografias">
+        <h2 class="titulo-seccion">Biografías Ilustres</h2>
+
+        <!-- MIGUEL HIDALGO (SLIDE 4) -->
+        <div class="bio-card">
+            <h3>Miguel Hidalgo y Costilla</h3>
+            <img src="Miguel_Hidalgo.jpg" alt="Retrato de Miguel Hidalgo">
+            <p class="subtitulo-bio">Padre de la Patria (1753 - 1811)</p>
+            <p style="margin-bottom: 1rem;">Conocido como el Padre de la Patria, fue un cura, teólogo y militar criollo que inició la Guerra de Independencia de México.</p>
+            <ul class="bio-list">
+                <li><strong>Iniciador de la Independencia:</strong> La madrugada del 16 de septiembre de 1810, hizo sonar las campanas de su parroquia en Dolores, Guanajuato (el Grito de Dolores), para convocar al pueblo a levantarse en armas contra el gobierno virreinal español.</li>
+                <li><strong>Líder insurgente:</strong> Encabezó la primera etapa de la lucha armada al frente de un ejército popular compuesto por campesinos, indígenas y mineros. Decretó la abolición de la esclavitud y la eliminación de los tributos a las castas.</li>
+                <li><strong>Su trágico final:</strong> Tras sufrir varias derrotas militares, fue capturado en Coahuila en marzo de 1811. Fue juzgado, excomulgado de la Iglesia católica y fusilado el 30 de julio de 1811 en Chihuahua.</li>
+            </ul>
+        </div>
+
+        <!-- JOSÉ MARÍA MORELOS (SLIDE 5) -->
+        <div class="bio-card">
+            <h3>José María Morelos y Pavón</h3>
+            <img src="Jose_Maria_Pavon.jpg" alt="José María Morelos y Pavón">
+            <p class="subtitulo-bio">El Siervo de la Nación (1765 - 1815)</p>
+            <p style="margin-bottom: 1rem;">Conocido como el "Siervo de la Nación", fue un sacerdote, militar y político novohispano que asumió el liderazgo de la Guerra de Independencia de México tras la muerte de Miguel Hidalgo.</p>
+            <ul class="bio-list">
+                <li><strong>Líder de la etapa de organización (1811-1815):</strong> Tras ser encomendado por Miguel Hidalgo para tomar el puerto de Acapulco y tomar las armas en el sur, organizó un ejército disciplinado que dominó gran parte del centro y sur del país.</li>
+                <li><strong>Redactor de los Sentimientos de la Nación (1813):</strong> Convocó al Congreso de Chilpancingo y presentó este célebre documento que planteaba la independencia absoluta de España, la abolición de la esclavitud, la eliminación de las castas y la división de poderes.</li>
+                <li><strong>Primera Constitución:</strong> Impulsó la Constitución de Apatzingán (1814), considerada la primera carta magna del movimiento independentista mexicano.</li>
+                <li><strong>Captura y muerte:</strong> Fue capturado por las tropas realistas en noviembre de 1815 y fusilado el 22 de diciembre de 1815 en San Cristóbal Ecatepec.</li>
+            </ul>
+        </div>
+
+        <!-- JOSEFA ORTIZ DE DOMÍNGUEZ (SLIDE 6) -->
+        <div class="bio-card">
+            <h3>Josefa Ortiz de Domínguez</h3>
+            <img src="josefa_ortiz_de_domínguez.jpg" alt="Retrato de josefa ortiz de domínguez">
+            <p class="subtitulo-bio">La Corregidora de Querétaro (1768 - 1829)</p>
+            <p style="margin-bottom: 1rem;">Conocida como La Corregidora, fue una de las principales organizadoras de la Independencia de México y una figura fundamental para que la lucha armada pudiera iniciar.</p>
+            <ul class="bio-list">
+                <li><strong>La Conspiración:</strong> Casada con el corregidor de Querétaro, organizó en su casa las reuniones secretas donde Miguel Hidalgo e Ignacio Allende planeaban la independencia.</li>
+                <li><strong>El aviso decisivo:</strong> En septiembre de 1810, al ser descubiertos, su esposo la encerró para protegerla. Ella se las arregló para enviar un mensaje secreto alertando a Hidalgo, lo que obligó a adelantar el inicio de la guerra a la madrugada del 16 de septiembre.</li>
+                <li><strong>Prisión y lealtad:</strong> Fue encarcelada tres años por traición a la Corona española, pero nunca delató a ningún insurgente ni aceptó recompensas tras lograrse la independencia.</li>
+            </ul>
+        </div>
+
+        <!-- VICENTE GUERRERO (SLIDE 7) -->
+        <div class="bio-card">
+            <h3>Vicente Guerrero</h3>
+            <img src="Vicente_Guerrero.jpg" alt="Vicente Guerrero width=80">
+            <p class="subtitulo-bio">Consumador de la Independencia (1782 - 1831)</p>
+            <p style="margin-bottom: 1rem;">General que mantuvo viva la chispa de la resistencia insurgente en las montañas del sur y pactó la paz para lograr la consumación independentista.</p>
+            <ul class="bio-list">
+                <li><strong>Resistencia insurgente:</strong> Tras la muerte de Morelos, mantuvo viva la lucha armada mediante la guerra de guerrillas en las montañas del sur del país.</li>
+                <li><strong>El Abrazo de Acatempan (1821):</strong> Se unió con Agustín de Iturbide para proclamar el Plan de Iguala y formar el Ejército Trigarante, logrando así la consumación de la Independencia.</li>
+                <li><strong>Frase célebre:</strong> Cuando su padre intentó convencerlo de rendirse a cambio de indultos y riquezas del virrey, él se negó pronunciando: <em>«La patria es primero»</em>.</li>
+                <li><strong>Presidente de México (1829):</strong> Durante su mandato expidió el decreto formal para la abolición definitiva de la esclavitud en todo el país.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- MITOS DEL MES PATRIO (SLIDE 8) -->
+    <section id="mitos">
+        <h2 class="titulo-seccion">Mitos del Mes Patrio</h2>
+        <div class="mitos-grid">
+            
+            <div class="mito-card">
+                <h4>No lo cambió Porfirio Díaz por su cumpleaños</h4>
+                <p>La fiesta iniciaba desde la noche del 15 de septiembre desde la década de 1840, cuando Díaz era apenas un niño.</p>
+            </div>
+
+            <div class="mito-card">
+                <h4>Hidalgo no gritó «¡Viva México!»</h4>
+                <p>En 1810 vitoreó a Fernando VII, a la Virgen de Guadalupe y llamó a derrocar al «mal gobierno». La frase «¡Viva México!» se adoptó años después.</p>
+            </div>
+
+            <div class="mito-card">
+                <h4>El Pípila no existió como persona individual</h4>
+                <p>No hay registros de Juan José de los Reyes Martínez; se considera una figura simbólica que representa la valentía colectiva de los mineros.</p>
+            </div>
+
+            <div class="mito-card">
+                <h4>México no nació como república en 1821</h4>
+                <p>El Acta de Independencia declaró oficialmente la creación del Imperio Mexicano, no de una república.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p><strong>Presentación del Mes Patrio - Independencia de México</strong></p>
+        <p>Elaborado por: Valeria Dayana Madrid de la Cruz | Matrícula: 24308051280862</p>
+    </footer>
+
+</body>
+</html>
