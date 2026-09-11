@@ -1,9 +1,11 @@
-/* VARIABLES Y ESTILOS GENERALES */
+/* VARIABLES Y ESTILOS GENERALES*/
 :root {
     --verde: #006847;
     --verde-oscuro: #004d34;
     --rojo: #CE1126;
     --blanco: #ffffff;
+    --negro: #171002;
+    --verde_claro: #BBF495;
     --fondo: #f4f5f7;
     --texto: #2B2B2B;
     --texto-sec: #555555;
@@ -163,14 +165,14 @@ nav a:hover, nav a.active {
 .timeline {
     max-width: 850px;
     margin: 0 auto;
-    border-left: 4px solid var(--verde);
+    border-left: 4px solid var(--negro);
     padding-left: 2rem;
 }
 
 .timeline-item {
     position: relative;
     margin-bottom: 2rem;
-    background: var(--blanco);
+    background: var(--verde_claro);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: var(--sombra);
