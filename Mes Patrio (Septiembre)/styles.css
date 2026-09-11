@@ -1,8 +1,6 @@
-/* ==========================================
-   VARIABLES Y ESTILOS GENERALES
-   ========================================== */
+/* VARIABLES Y ESTILOS GENERALES */
 :root {
-    --verde: #006847;
+    --verde: #CFC2C5;
     --verde-oscuro: #004d34;
     --rojo: #CE1126;
     --blanco: #ffffff;
@@ -31,9 +29,7 @@ body {
     padding: 0 1.5rem;
 }
 
-/* ==========================================
-   NAVEGACIÓN MULTIPÁGINA
-   ========================================== */
+/* NAVEGACIÓN MULTIPÁGINA */
 header {
     background: var(--blanco);
     border-bottom: 4px solid var(--verde);
@@ -83,9 +79,7 @@ nav a:hover, nav a.active {
     background-color: var(--rojo);
 }
 
-/* ==========================================
-   PORTADA Y MENÚ PRINCIPAL DE TEMAS
-   ========================================== */
+/* PORTADA Y MENÚ PRINCIPAL DE TEMAS */
 .hero-pagina {
     background: linear-gradient(135deg, var(--verde-oscuro) 0%, var(--verde) 50%, var(--rojo) 100%);
     color: white;
@@ -137,9 +131,7 @@ nav a:hover, nav a.active {
     color: var(--blanco);
 }
 
-/* ==========================================
-   COMPONENTES Y TARJETAS
-   ========================================== */
+/* COMPONENTES Y TARJETAS */
 .titulo-seccion {
     text-align: center;
     font-size: 2.2rem;
