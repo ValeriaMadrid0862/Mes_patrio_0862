@@ -1,21 +1,41 @@
+<!-- Indica al navegador que el documento está escrito bajo la especificación de HTML5 -->
 <!DOCTYPE html>
+
+<!-- Apertura del documento HTML y definición del idioma del contenido (Español) -->
 <html lang="es">
 <head>
+    <!-- Configuración del juego de caracteres UTF-8 para soportar acentos y caracteres especiales (ñ, á, etc.) -->
     <meta charset="UTF-8">
+    
+    <!-- Configuración para asegurar una correcta visualización en dispositivos móviles (diseño responsivo) -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Personajes - Mes Patrio</title>
+    
+    <!-- Enlace a la tipografía "Montserrat" desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Enlace a la hoja de estilos externa en CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Encabezado principal del sitio web -->
     <header>
+        <!-- Contenedor para centrar y estructurar los elementos del menú de navegación -->
         <div class="nav-container">
+            
+            <!-- Logotipo del sitio con un enlace a la página principal -->
             <a href="index.html" class="logo">Mes <span>Patrio</span></a>
+            
+            <!-- Menú de navegación principal -->
             <nav>
                 <ul>
+                    <!-- Enlaces a las diferentes secciones del sitio -->
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="linea_tiempo.html">Línea de Tiempo</a></li>
+                    <!-- La clase "active" indica visualmente la página en la que se encuentra actualmente el usuario -->
                     <li><a href="personajes.html" class="active">Personajes</a></li>
                     <li><a href="biografias.html">Biografías</a></li>
                     <li><a href="mitos.html">Mitos</a></li>
@@ -24,10 +44,15 @@
         </div>
     </header>
 
+    <!-- Contenido principal de la página -->
     <main class="contenedor">
+        <!-- Título principal de la sección -->
         <h2 class="titulo-seccion">Personajes Principales</h2>
 
+        <!-- Contenedor en cuadrícula para organizar las tarjetas de los personajes -->
         <div class="grid-cards">
+            
+            <!-- Tarjeta 1: Miguel Hidalgo -->
             <article class="card-personaje">
                 <span class="etiqueta">1753 - 1811</span>
                 <h3>Miguel Hidalgo y Costilla</h3>
@@ -35,6 +60,7 @@
                 <p>Padre de la Patria. Cura erudito e ilustrado que encabezó el levantamiento popular en 1810.</p>
             </article>
 
+            <!-- Tarjeta 2: José María Morelos -->
             <article class="card-personaje">
                 <span class="etiqueta">1765 - 1815</span>
                 <h3>José María Morelos</h3>
@@ -42,6 +68,7 @@
                 <p>El "Siervo de la Nación", sacerdote y militar que asumió el liderazgo tras la muerte de Hidalgo.</p>
             </article>
 
+            <!-- Tarjeta 3: Josefa Ortiz de Domínguez -->
             <article class="card-personaje">
                 <span class="etiqueta">1768 - 1829</span>
                 <h3>Josefa Ortiz de Domínguez</h3>
@@ -49,6 +76,7 @@
                 <p>La Corregidora de Querétaro. Avisó a los insurgentes que la conspiración había sido descubierta.</p>
             </article>
 
+            <!-- Tarjeta 4: Vicente Guerrero -->
             <article class="card-personaje">
                 <span class="etiqueta">1782 - 1831</span>
                 <h3>Vicente Guerrero</h3>
@@ -57,11 +85,13 @@
             </article>
         </div>
 
+        <!-- Contenedor del botón para regresar a la página principal -->
         <div class="volver-container">
             <a href="index.html" class="btn-volver">← Volver al Inicio</a>
         </div>
     </main>
 
+    <!-- Pie de página con información del autor o créditos del proyecto -->
     <footer>
         <p>Elaborado por: Valeria Dayana Madrid de la Cruz | Grupo:5°J | No.Control: 24308051280862</p>
     </footer>
