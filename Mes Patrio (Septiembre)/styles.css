@@ -1,48 +1,62 @@
-/* VARIABLES Y ESTILOS BASE */
+/* ==========================================================================
+   VARIABLES Y ESTILOS BASE
+   ========================================================================== */
+
+/* Definición de variables CSS globales (:root) para mantener consistencia en la paleta de colores patrios */
 :root {
-  --verde: #006847;
-  --rojo: #CE1126;
-  --blanco: #ffffff;
-  --fondo: #f4f5f7;
-  --texto: #2B2B2B;
+  --verde: #006847;   /* Verde oficial/patrio para elementos primarios */
+  --rojo: #CE1126;    /* Rojo patrio para acentos y estados hover */
+  --blanco: #ffffff;  /* Blanco para fondos de tarjetas e itinerarios */
+  --fondo: #f4f5f7;   /* Gris muy claro para el fondo general de la página */
+  --texto: #2B2B2B;   /* Gris oscuro para mejorar la legibilidad del texto */
 }
 
+/* Reset básico para eliminar márgenes por defecto y aplicar box-sizing uniforme */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto total del elemento */
+  font-family: Arial, sans-serif; /* Tipografía secundaria por defecto */
 }
 
+/* Estilos generales para el cuerpo del documento */
 body {
   background-color: var(--fondo);
   color: var(--texto);
-  line-height: 1.6;
+  line-height: 1.6; /* Interlineado cómodo para la lectura */
 }
 
+/* Contenedor principal para delimitar el ancho máximo del contenido centrado */
 .contenedor {
   max-width: 1100px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 2rem auto; /* Centra el bloque horizontalmente con margen superior e inferior */
+  padding: 0 1rem;   /* Espaciado lateral para pantallas pequeñas */
 }
 
-/* NAVEGACIÓN */
+/* ==========================================================================
+   NAVEGACIÓN (HEADER & NAV)
+   ========================================================================== */
+
+/* Encabezado fijo en la parte superior */
 header {
   background: var(--blanco);
-  border-bottom: 4px solid var(--verde);
+  border-bottom: 4px solid var(--verde); /* Línea verde decorativa inferior */
   position: sticky;
   top: 0;
+  z-index: 1000; /* Asegura que la navegación quede por encima de otros elementos al hacer scroll */
 }
 
+/* Contenedor flex para alinear el logo y la navegación */
 .nav-container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
+  align-items: center;            /* Centra los elementos verticalmente */
   padding: 1rem;
 }
 
+/* Estilos para el texto del logotipo */
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
@@ -50,28 +64,40 @@ header {
   text-decoration: none;
 }
 
-.logo span { color: var(--rojo); }
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 1rem;
+/* Color rojo para destacar la segunda palabra del logotipo ("Patrio") */
+.logo span { 
+  color: var(--rojo); 
 }
 
+/* Lista horizontal para los enlaces de navegación */
+nav ul {
+  display: flex;
+  list-style: none; /* Elimina los puntos por defecto de las listas */
+  gap: 1rem;        /* Espaciado uniforme entre cada opción de menú */
+}
+
+/* Estilos base de los enlaces del menú */
 nav a {
   text-decoration: none;
   color: var(--texto);
   font-weight: bold;
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el cursor */
 }
 
-nav a:hover, nav a.active {
+/* Estado activo y al pasar el ratón (hover) sobre los enlaces del menú */
+nav a:hover, 
+nav a.active {
   color: var(--blanco);
   background-color: var(--rojo);
 }
 
-/* PORTADA */
+/* ==========================================================================
+   PORTADA (SECCIÓN HERO & BOTONES)
+   ========================================================================== */
+
+/* Bloque destacado para la página de inicio */
 .hero-pagina {
   background: var(--verde);
   color: white;
@@ -79,25 +105,33 @@ nav a:hover, nav a.active {
   padding: 3rem 1rem;
 }
 
-.hero-pagina h1 { font-size: 2.5rem; }
-.hero-pagina h2 { font-size: 1.5rem; margin-bottom: 1rem; }
+.hero-pagina h1 { 
+  font-size: 2.5rem; 
+}
 
+.hero-pagina h2 { 
+  font-size: 1.5rem; 
+  margin-bottom: 1rem; 
+}
+
+/* Caja translúcida con la información del alumno/autor */
 .autor-box {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
   padding: 1rem;
   border-radius: 8px;
   margin-bottom: 2rem;
-  display: inline-block;
+  display: inline-block; /* Se ajusta al ancho del contenido */
 }
 
-/* BOTONES DE TEMAS */
+/* Contenedor flexible para los accesos directos a los temas principales */
 .menu-tarjetas {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no caben */
   gap: 1rem;
   justify-content: center;
 }
 
+/* Estilo tipo botón para las tarjetas de navegación de la portada */
 .btn-tema {
   background: var(--blanco);
   color: var(--verde);
@@ -105,24 +139,31 @@ nav a:hover, nav a.active {
   padding: 0.8rem 1.2rem;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para dar elevación */
+  transition: transform 0.2s, background-color 0.2s;
 }
 
+/* Efecto interactivo al pasar el ratón sobre los botones de temas */
 .btn-tema:hover {
   background: var(--rojo);
   color: var(--blanco);
 }
 
-/* TITULOS Y TARJETAS */
+/* ==========================================================================
+   TÍTULOS Y ESTRUCTURA DE REJILLA (CARDS)
+   ========================================================================== */
+
+/* Título estandarizado para las distintas secciones */
 .titulo-seccion {
   text-align: center;
   font-size: 2rem;
   color: var(--verde);
   margin-bottom: 2rem;
-  border-bottom: 3px solid var(--rojo);
+  border-bottom: 3px solid var(--rojo); /* Subrayado patrio decorativo */
   padding-bottom: 0.5rem;
 }
 
+/* Sistema de cuadrícula/disposición flexible para las tarjetas de contenido */
 .grid-cards {
   display: flex;
   flex-wrap: wrap;
@@ -130,26 +171,40 @@ nav a:hover, nav a.active {
   justify-content: center;
 }
 
-.banner-img { text-align: center; margin-bottom: 1rem; }
-.banner-img img { max-width: 120px; }
+/* Encabezado o contenedor de la imagen del banner */
+.banner-img { 
+  text-align: center; 
+  margin-bottom: 1rem; 
+}
 
-/* LÍNEA DE TIEMPO */
+.banner-img img { 
+  max-width: 120px; 
+}
+
+/* ==========================================================================
+   LÍNEA DE TIEMPO
+   ========================================================================== */
+
+/* Contenedor vertical de la línea de tiempo con borde lateral */
 .timeline {
   max-width: 800px;
   margin: 0 auto;
-  border-left: 4px solid var(--verde);
+  border-left: 4px solid var(--verde); /* Eje de la línea de tiempo */
   padding-left: 1.5rem;
 }
 
+/* Cada evento individual dentro de la línea de tiempo */
 .timeline-item {
   margin-bottom: 1.5rem;
-  background: #e8f5e9;
+  background: #e8f5e9; /* Fondo verde muy suave */
   padding: 1rem;
   border-radius: 8px;
-  border-right: 4px solid var(--rojo);
+  border-right: 4px solid var(--rojo); /* Detalle de color en el borde derecho */
 }
 
-.fecha, .etiqueta {
+/* Etiquetas generales para mostrar fechas y períodos */
+.fecha, 
+.etiqueta {
   display: inline-block;
   font-weight: bold;
   font-size: 0.85rem;
@@ -158,38 +213,89 @@ nav a:hover, nav a.active {
   margin-bottom: 0.5rem;
 }
 
-.fecha { background: var(--blanco); color: var(--verde); }
-.etiqueta { background: var(--rojo); color: white; }
+/* Estilos específicos para badges de fechas y etiquetas */
+.fecha { 
+  background: var(--blanco); 
+  color: var(--verde); 
+}
 
-/* PERSONAJES Y BIOGRAFÍAS */
-.card-personaje, .mito-card {
+.etiqueta { 
+  background: var(--rojo); 
+  color: white; 
+}
+
+/* ==========================================================================
+   PERSONAJES Y MITOS (TARJETAS CORTAS)
+   ========================================================================== */
+
+/* Estilo base para tarjetas de personajes y mitos */
+.card-personaje, 
+.mito-card {
   background: var(--blanco);
   border-radius: 8px;
   padding: 1.5rem;
-  border-top: 5px solid var(--verde);
+  border-top: 5px solid var(--verde); /* Borde decorativo superior */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 280px;
+  width: 280px; /* Ancho fijo para mantener simetría en la cuadrícula */
 }
 
-.card-personaje { text-align: center; }
-.card-personaje img { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; }
+/* Ajustes particulares para la tarjeta de personajes */
+.card-personaje { 
+  text-align: center; 
+}
 
+.card-personaje img { 
+  max-width: 100%; 
+  border-radius: 6px; 
+  margin: 0.5rem 0; 
+}
+
+/* ==========================================================================
+   BIOGRAFÍAS
+   ========================================================================== */
+
+/* Tarjeta extendida para información biográfica detallada */
 .bio-card {
   background: var(--blanco);
   border-radius: 8px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  border-left: 6px solid var(--verde);
+  border-left: 6px solid var(--verde); /* Borde decorativo lateral */
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.bio-card img { max-width: 120px; border-radius: 6px; float: right; margin-left: 1rem; }
+/* Alineación flotante de la imagen en tarjetas biográficas */
+.bio-card img { 
+  max-width: 120px; 
+  border-radius: 6px; 
+  float: right;       /* Flota la imagen a la derecha del texto */
+  margin-left: 1rem;  /* Margen interno para evitar que el texto pegue con la imagen */
+}
 
-.subtitulo { color: #666; margin-bottom: 0.5rem; }
-.bio-list { list-style: disc; padding-left: 1.2rem; margin-top: 0.5rem; }
+/* Subtítulos descriptivos en biografías */
+.subtitulo { 
+  color: #666; 
+  margin-bottom: 0.5rem; 
+}
 
-/* BOTÓN VOLVER */
-.volver-container { text-align: center; margin-top: 2rem; }
+/* Listas con información clave del personaje */
+.bio-list { 
+  list-style: disc; 
+  padding-left: 1.2rem; 
+  margin-top: 0.5rem; 
+}
+
+/* ==========================================================================
+   BOTÓN REGRESAR / VOLVER
+   ========================================================================== */
+
+/* Contenedor del botón para volver al Inicio */
+.volver-container { 
+  text-align: center; 
+  margin-top: 2rem; 
+}
+
+/* Botón interactivo de retorno */
 .btn-volver {
   display: inline-block;
   background: var(--verde);
@@ -198,11 +304,17 @@ nav a:hover, nav a.active {
   padding: 0.6rem 1.5rem;
   border-radius: 20px;
   font-weight: bold;
+  transition: background-color 0.3s;
 }
 
-.btn-volver:hover { background: var(--rojo); }
+.btn-volver:hover { 
+  background: var(--rojo); 
+}
 
-/* FOOTER */
+/* ==========================================================================
+   PIE DE PÁGINA (FOOTER)
+   ========================================================================== */
+
 footer {
   background: var(--blanco);
   text-align: center;
@@ -211,9 +323,27 @@ footer {
   margin-top: 3rem;
 }
 
-/* RESPONSIVO */
+/* ==========================================================================
+   DISEÑO RESPONSIVO (MEDIA QUERIES)
+   ========================================================================== */
+
+/* Adaptaciones para dispositivos móviles y pantallas pequeñas (ancho máximo de 768px) */
 @media (max-width: 768px) {
-  .nav-container { flex-direction: column; gap: 0.8rem; }
-  .hero-pagina h1 { font-size: 1.8rem; }
-  .bio-card img { float: none; display: block; margin: 0 auto 1rem; }
+  /* Alinea el menú de navegación en columna cuando el espacio horizontal es limitado */
+  .nav-container { 
+    flex-direction: column; 
+    gap: 0.8rem; 
+  }
+
+  /* Ajusta el tamaño de título principal en pantallas pequeñas */
+  .hero-pagina h1 { 
+    font-size: 1.8rem; 
+  }
+
+  /* Desactiva el flotado de las imágenes en las biografías para centrarlas sobre el texto */
+  .bio-card img { 
+    float: none; 
+    display: block; 
+    margin: 0 auto 1rem; 
+  }
 }
