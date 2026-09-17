@@ -1,349 +1,219 @@
-/* ==========================================================================
-   VARIABLES Y ESTILOS BASE
-   ========================================================================== */
-
-/* Definición de variables CSS globales (:root) para mantener consistencia en la paleta de colores patrios */
+/* VARIABLES Y ESTILOS BASE */
 :root {
-  --verde: #006847;   /* Verde oficial/patrio para elementos primarios */
-  --rojo: #CE1126;    /* Rojo patrio para acentos y estados hover */
-  --blanco: #ffffff;  /* Blanco para fondos de tarjetas e itinerarios */
-  --fondo: #f4f5f7;   /* Gris muy claro para el fondo general de la página */
-  --texto: #2B2B2B;   /* Gris oscuro para mejorar la legibilidad del texto */
+  --verde: #006847; /* Variable CSS para definir el verde patrio principal */
+  --rojo: #CE1126; /* Variable CSS para definir el rojo patrio secundario */
+  --blanco: #ffffff; /* Variable CSS para definir el fondo de tarjetas y texto en botones */
+  --fondo: #f4f5f7; /* Variable CSS para definir el color de fondo general de la página */
+  --texto: #2B2B2B; /* Variable CSS para definir el color principal del texto (gris oscuro) */
 }
 
-/* Reset básico para eliminar márgenes por defecto y aplicar box-sizing uniforme */
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Incluye padding y border dentro del ancho/alto total del elemento */
-  font-family: Arial, sans-serif; /* Tipografía secundaria por defecto */
+  margin: 0; /* Elimina todos los márgenes externos por defecto de todos los elementos */
+  padding: 0; /* Elimina todos los rellenos internos por defecto de todos los elementos */
+  box-sizing: border-box; /* Incluye bordes y rellenos en el cálculo del ancho y alto total */
+  font-family: Arial, sans-serif; /* Define la tipografía por defecto para todo el sitio */
 }
 
-/* Estilos generales para el cuerpo del documento */
 body {
-  background-color: var(--fondo);
-  color: var(--texto);
-  line-height: 1.6; /* Interlineado cómodo para la lectura */
+  background-color: var(--fondo); /* Aplica el color de fondo general definido en las variables */
+  color: var(--texto); /* Establece el color de texto general definido en las variables */
+  line-height: 1.6; /* Define una altura de línea proporcional para facilitar la lectura */
 }
 
-/* Contenedor principal para delimitar el ancho máximo del contenido centrado */
 .contenedor {
-  max-width: 1100px;
-  margin: 2rem auto; /* Centra el bloque horizontalmente con margen superior e inferior */
-  padding: 0 1rem;   /* Espaciado lateral para pantallas pequeñas */
+  max-width: 1100px; /* Establece el ancho máximo de la zona principal de contenido */
+  margin: 2rem auto; /* Centra el contenedor horizontalmente y asigna margen arriba y abajo */
+  padding: 0 1rem; /* Agrega un espaciado lateral interno para que el contenido no toque los bordes */
 }
 
-/* ==========================================================================
-   NAVEGACIÓN (HEADER & NAV)
-   ========================================================================== */
-
-/* Encabezado fijo en la parte superior */
+/* NAVEGACIÓN */
 header {
-  background: var(--blanco);
-  border-bottom: 4px solid var(--verde); /* Línea verde decorativa inferior */
-  position: sticky;
-  top: 0;
-  z-index: 1000; /* Asegura que la navegación quede por encima de otros elementos al hacer scroll */
+  background: var(--blanco); /* Define el color de fondo del encabezado superior */
+  border-bottom: 4px solid var(--verde); /* Agrega una línea verde en el borde inferior del encabezado */
+  position: sticky; /* Hace que el encabezado se quede fijo al hacer desplazamiento */
+  top: 0; /* Fija la posición del encabezado en la parte superior de la pantalla */
 }
 
-/* Contenedor flex para alinear el logo y la navegación */
 .nav-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between; /* Separa el logo a la izquierda y el menú a la derecha */
-  align-items: center;            /* Centra los elementos verticalmente */
-  padding: 1rem;
+  max-width: 1200px; /* Ancho máximo para alinear el contenido interno del menú */
+  margin: 0 auto; /* Centra horizontalmente el contenedor de la navegación */
+  display: flex; /* Activa el modelo de caja flexible para organizar su contenido */
+  justify-content: space-between; /* Distribuye el logotipo y el menú a los extremos opuestos */
+  align-items: center; /* Alinea verticalmente los elementos al centro */
+  padding: 1rem; /* Añade espaciado interno en todos los lados de la barra */
 }
 
-/* Estilos para el texto del logotipo */
 .logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  color: var(--verde);
-  text-decoration: none;
+  font-size: 1.4rem; /* Establece el tamaño de letra para el texto del logotipo */
+  font-weight: bold; /* Aplica estilo negrita a la tipografía del logotipo */
+  color: var(--verde); /* Asigna el color verde patrio al texto base del logotipo */
+  text-decoration: none; /* Elimina el subrayado por defecto del enlace en el logotipo */
 }
 
-/* Color rojo para destacar la segunda palabra del logotipo ("Patrio") */
-.logo span { 
-  color: var(--rojo); 
-}
+.logo span { color: var(--rojo); } /* Cambia a color rojo el texto dentro de la etiqueta span del logo */
 
-/* Lista horizontal para los enlaces de navegación */
 nav ul {
-  display: flex;
-  list-style: none; /* Elimina los puntos por defecto de las listas */
-  gap: 1rem;        /* Espaciado uniforme entre cada opción de menú */
+  display: flex; /* Convierte la lista no ordenada en una fila flexible horizontal */
+  list-style: none; /* Quita los viñetas o puntos por defecto de la lista de navegación */
+  gap: 1rem; /* Define el espacio de separación horizontal entre los elementos del menú */
 }
 
-/* Estilos base de los enlaces del menú */
 nav a {
-  text-decoration: none;
-  color: var(--texto);
-  font-weight: bold;
-  padding: 0.4rem 0.8rem;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s; /* Transición suave al pasar el cursor */
+  text-decoration: none; /* Quita el subrayado a los enlaces de la navegación */
+  color: var(--texto); /* Establece el color de texto por defecto para los enlaces */
+  font-weight: bold; /* Aplica estilo negrita a los textos del menú */
+  padding: 0.4rem 0.8rem; /* Agrega relleno interno arriba/abajo e izquierda/derecha a las pestañas */
+  border-radius: 4px; /* Redondea levemente las esquinas del fondo de los enlaces */
 }
 
-/* Estado activo y al pasar el ratón (hover) sobre los enlaces del menú */
-nav a:hover, 
-nav a.active {
-  color: var(--blanco);
-  background-color: var(--rojo);
+nav a:hover, nav a.active {
+  color: var(--blanco); /* Cambia el texto a color blanco al pasar el ratón o al estar activo */
+  background-color: var(--rojo); /* Pinta el fondo de color rojo al pasar el ratón o al estar activo */
 }
 
-/* ==========================================================================
-   PORTADA (SECCIÓN HERO & BOTONES)
-   ========================================================================== */
-
-/* Bloque destacado para la página de inicio */
+/* PORTADA */
 .hero-pagina {
-  background: var(--verde);
-  color: white;
-  text-align: center;
-  padding: 3rem 1rem;
+  background: var(--verde); /* Define el fondo verde para la sección principal de bienvenida */
+  color: white; /* Establece en blanco el color de letra para los textos de la portada */
+  text-align: center; /* Centra horizontalmente todos los elementos del bloque de portada */
+  padding: 3rem 1rem; /* Añade relleno superior/inferior de 3rem y lateral de 1rem */
 }
 
-.hero-pagina h1 { 
-  font-size: 2.5rem; 
-}
+.hero-pagina h1 { font-size: 2.5rem; } /* Define un tamaño grande para el título principal de la portada */
+.hero-pagina h2 { font-size: 1.5rem; margin-bottom: 1rem; } /* Tamaño para el subtítulo y margen inferior */
 
-.hero-pagina h2 { 
-  font-size: 1.5rem; 
-  margin-bottom: 1rem; 
-}
-
-/* Caja translúcida con la información del alumno/autor */
 .autor-box {
-  background: rgba(255, 255, 255, 0.2); /* Fondo blanco semitransparente */
-  padding: 1rem;
-  border-radius: 8px;
-  margin-bottom: 2rem;
-  display: inline-block; /* Se ajusta al ancho del contenido */
+  background: rgba(255, 255, 255, 0.2); /* Crea un fondo blanco translúcido con opacidad del 20% */
+  padding: 1rem; /* Aplica espacio de relleno en el interior de la caja de datos */
+  border-radius: 8px; /* Redondea los bordes del recuadro de la información del alumno */
+  margin-bottom: 2rem; /* Agrega espacio por debajo del bloque antes del menú */
+  display: inline-block; /* Ajusta el ancho de la caja al tamaño exacto de su contenido */
 }
 
-/* Contenedor flexible para los accesos directos a los temas principales */
+/* BOTONES DE TEMAS */
 .menu-tarjetas {
-  display: flex;
-  flex-wrap: wrap; /* Permite que los botones pasen a la siguiente línea si no caben */
-  gap: 1rem;
-  justify-content: center;
+  display: flex; /* Dispone las tarjetas en una estructura de caja flexible */
+  flex-wrap: wrap; /* Permite que los botones bajen a la siguiente fila si no hay espacio */
+  gap: 1rem; /* Agrega un espacio uniforme de separación entre cada botón de tema */
+  justify-content: center; /* Centra horizontalmente los botones dentro de la portada */
 }
 
-/* Estilo tipo botón para las tarjetas de navegación de la portada */
 .btn-tema {
-  background: var(--blanco);
-  color: var(--verde);
-  text-decoration: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra suave para dar elevación */
-  transition: transform 0.2s, background-color 0.2s;
+  background: var(--blanco); /* Otorga fondo blanco a los botones del menú principal */
+  color: var(--verde); /* Define el color del texto en verde para los botones de temas */
+  text-decoration: none; /* Quita el subrayado del texto en los enlaces tipo botón */
+  padding: 0.8rem 1.2rem; /* Aplica un espacio de relleno amplio para dar forma de botón */
+  border-radius: 8px; /* Suaviza las esquinas de los botones con bordes redondeados */
+  font-weight: bold; /* Resalta el texto del botón en negrita */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Añade una sutil sombra inferior para generar relieve */
 }
 
-/* Efecto interactivo al pasar el ratón sobre los botones de temas */
 .btn-tema:hover {
-  background: var(--rojo);
-  color: var(--blanco);
+  background: var(--rojo); /* Cambia el fondo del botón a rojo al pasar el ratón por encima */
+  color: var(--blanco); /* Cambia el texto del botón a blanco al hacer hover */
 }
 
-/* ==========================================================================
-   TÍTULOS Y ESTRUCTURA DE REJILLA (CARDS)
-   ========================================================================== */
-
-/* Título estandarizado para las distintas secciones */
+/* TITULOS Y TARJETAS */
 .titulo-seccion {
-  text-align: center;
-  font-size: 2rem;
-  color: var(--verde);
-  margin-bottom: 2rem;
-  border-bottom: 3px solid var(--rojo); /* Subrayado patrio decorativo */
-  padding-bottom: 0.5rem;
+  text-align: center; /* Centra el texto de los títulos de las secciones */
+  font-size: 2rem; /* Define el tamaño del texto para los títulos de cada página */
+  color: var(--verde); /* Asigna el color verde patrio a las cabeceras de sección */
+  margin-bottom: 2rem; /* Separa el título de las tarjetas inferiores mediante un margen */
+  border-bottom: 3px solid var(--rojo); /* Agrega una línea roja decorativa por debajo del título */
+  padding-bottom: 0.5rem; /* Otorga un espacio entre el texto del título y su línea inferior */
 }
 
-/* Sistema de cuadrícula/disposición flexible para las tarjetas de contenido */
 .grid-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
+  display: flex; /* Organiza las tarjetas dentro de un contenedor flexible */
+  flex-wrap: wrap; /* Permite que las tarjetas formen múltiples filas al redimensionar */
+  gap: 1.5rem; /* Establece la separación entre cada tarjeta en la cuadrícula */
+  justify-content: center; /* Centra las tarjetas horizontalmente en la pantalla */
 }
 
-/* Encabezado o contenedor de la imagen del banner */
-.banner-img { 
-  text-align: center; 
-  margin-bottom: 1rem; 
-}
+.banner-img { text-align: center; margin-bottom: 1rem; } /* Centra la imagen del banner e incluye margen */
+.banner-img img { max-width: 120px; } /* Delimita el tamaño máximo de la imagen del banner */
 
-.banner-img img { 
-  max-width: 120px; 
-}
-
-/* ==========================================================================
-   LÍNEA DE TIEMPO
-   ========================================================================== */
-
-/* Contenedor vertical de la línea de tiempo con borde lateral */
+/* LÍNEA DE TIEMPO */
 .timeline {
-  max-width: 800px;
-  margin: 0 auto;
-  border-left: 4px solid var(--verde); /* Eje de la línea de tiempo */
-  padding-left: 1.5rem;
+  max-width: 800px; /* Limita el ancho horizontal del contenedor de la línea de tiempo */
+  margin: 0 auto; /* Centra el bloque de la línea de tiempo en el medio de la página */
+  border-left: 4px solid var(--verde); /* Crea la barra vertical principal de la línea en color verde */
+  padding-left: 1.5rem; /* Separa los recuadros del eje vertical de la línea de tiempo */
 }
 
-/* Cada evento individual dentro de la línea de tiempo */
 .timeline-item {
-  margin-bottom: 1.5rem;
-  background: #e8f5e9; /* Fondo verde muy suave */
-  padding: 1rem;
-  border-radius: 8px;
-  border-right: 4px solid var(--rojo); /* Detalle de color en el borde derecho */
+  margin-bottom: 1.5rem; /* Establece la distancia entre cada evento de la línea de tiempo */
+  background: #e8f5e9; /* Otorga un fondo verde muy claro a los bloques de eventos */
+  padding: 1rem; /* Añade relleno interior para el contenido de cada evento */
+  border-radius: 8px; /* Curva los bordes de la caja de cada evento */
+  border-right: 4px solid var(--rojo); /* Añade un borde decorativo en rojo al lado derecho */
 }
 
-/* Etiquetas generales para mostrar fechas y períodos */
-.fecha, 
-.etiqueta {
-  display: inline-block;
-  font-weight: bold;
-  font-size: 0.85rem;
-  padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  margin-bottom: 0.5rem;
+.fecha, .etiqueta {
+  display: inline-block; /* Permite aplicar márgenes y rellenos a las etiquetas de texto */
+  font-weight: bold; /* Establece en negrita el texto dentro de las fechas y etiquetas */
+  font-size: 0.85rem; /* Ajusta a un tamaño de letra más pequeño y legible para las insignias */
+  padding: 0.2rem 0.6rem; /* Crea un relleno interno pequeño para dar aspecto de insignia */
+  border-radius: 12px; /* Redondea al máximo los bordes para generar un efecto de píldora */
+  margin-bottom: 0.5rem; /* Añade una separación hacia abajo respecto al título del evento */
 }
 
-/* Estilos específicos para badges de fechas y etiquetas */
-.fecha { 
-  background: var(--blanco); 
-  color: var(--verde); 
+.fecha { background: var(--blanco); color: var(--verde); } /* Define fondo blanco y letra verde para fechas */
+.etiqueta { background: var(--rojo); color: white; } /* Define fondo rojo y letra blanca para etiquetas */
+
+/* PERSONAJES Y BIOGRAFÍAS */
+.card-personaje, .mito-card {
+  background: var(--blanco); /* Establece fondo blanco en tarjetas de personajes y mitos */
+  border-radius: 8px; /* Redondea las cuatro esquinas de las tarjetas */
+  padding: 1.5rem; /* Agrega espacio de relleno interno para el texto e imágenes */
+  border-top: 5px solid var(--verde); /* Agrega una franja superior decorativa en verde */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Crea una sombra suave alrededor de las tarjetas */
+  width: 280px; /* Fija un ancho exacto uniforme para la cuadrícula de tarjetas */
 }
 
-.etiqueta { 
-  background: var(--rojo); 
-  color: white; 
-}
+.card-personaje { text-align: center; } /* Centra el texto e imágenes en las tarjetas de personajes */
+.card-personaje img { max-width: 100%; border-radius: 6px; margin: 0.5rem 0; } /* Ajusta la imagen al ancho */
 
-/* ==========================================================================
-   PERSONAJES Y MITOS (TARJETAS CORTAS)
-   ========================================================================== */
-
-/* Estilo base para tarjetas de personajes y mitos */
-.card-personaje, 
-.mito-card {
-  background: var(--blanco);
-  border-radius: 8px;
-  padding: 1.5rem;
-  border-top: 5px solid var(--verde); /* Borde decorativo superior */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  width: 280px; /* Ancho fijo para mantener simetría en la cuadrícula */
-}
-
-/* Ajustes particulares para la tarjeta de personajes */
-.card-personaje { 
-  text-align: center; 
-}
-
-.card-personaje img { 
-  max-width: 100%; 
-  border-radius: 6px; 
-  margin: 0.5rem 0; 
-}
-
-/* ==========================================================================
-   BIOGRAFÍAS
-   ========================================================================== */
-
-/* Tarjeta extendida para información biográfica detallada */
 .bio-card {
-  background: var(--blanco);
-  border-radius: 8px;
-  padding: 1.5rem;
-  margin-bottom: 1.5rem;
-  border-left: 6px solid var(--verde); /* Borde decorativo lateral */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  background: var(--blanco); /* Define fondo blanco para las tarjetas de biografías completas */
+  border-radius: 8px; /* Aplica bordes redondeados al recuadro de biografía */
+  padding: 1.5rem; /* Añade relleno interno en la caja de cada biografía */
+  margin-bottom: 1.5rem; /* Otorga un margen inferior entre una biografía y otra */
+  border-left: 6px solid var(--verde); /* Agrega un borde grueso decorativo en el lado izquierdo */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Mantiene el efecto de sombra en las tarjetas */
 }
 
-/* Alineación flotante de la imagen en tarjetas biográficas */
-.bio-card img { 
-  max-width: 120px; 
-  border-radius: 6px; 
-  float: right;       /* Flota la imagen a la derecha del texto */
-  margin-left: 1rem;  /* Margen interno para evitar que el texto pegue con la imagen */
-}
+.bio-card img { max-width: 120px; border-radius: 6px; float: right; margin-left: 1rem; } /* Foto a la derecha */
 
-/* Subtítulos descriptivos en biografías */
-.subtitulo { 
-  color: #666; 
-  margin-bottom: 0.5rem; 
-}
+.subtitulo { color: #666; margin-bottom: 0.5rem; } /* Pinta en gris tenue el subtítulo y le da margen */
+.bio-list { list-style: disc; padding-left: 1.2rem; margin-top: 0.5rem; } /* Lista con viñetas e identación */
 
-/* Listas con información clave del personaje */
-.bio-list { 
-  list-style: disc; 
-  padding-left: 1.2rem; 
-  margin-top: 0.5rem; 
-}
-
-/* ==========================================================================
-   BOTÓN REGRESAR / VOLVER
-   ========================================================================== */
-
-/* Contenedor del botón para volver al Inicio */
-.volver-container { 
-  text-align: center; 
-  margin-top: 2rem; 
-}
-
-/* Botón interactivo de retorno */
+/* BOTÓN VOLVER */
+.volver-container { text-align: center; margin-top: 2rem; } /* Centra el botón de regreso y le da margen arriba */
 .btn-volver {
-  display: inline-block;
-  background: var(--verde);
-  color: white;
-  text-decoration: none;
-  padding: 0.6rem 1.5rem;
-  border-radius: 20px;
-  font-weight: bold;
-  transition: background-color 0.3s;
+  display: inline-block; /* Permite aplicar dimensiones y espaciados al enlace de retorno */
+  background: var(--verde); /* Asigna fondo verde al botón de volver */
+  color: white; /* Define el texto del botón de volver en color blanco */
+  text-decoration: none; /* Elimina la línea de subrayado del enlace */
+  padding: 0.6rem 1.5rem; /* Otorga la forma de botón alargado con relleno interno */
+  border-radius: 20px; /* Curva los bordes de forma redonda/ovalada */
+  font-weight: bold; /* Resalta el texto del botón en negrita */
 }
 
-.btn-volver:hover { 
-  background: var(--rojo); 
-}
+.btn-volver:hover { background: var(--rojo); } /* Cambia a rojo el botón de regresar al pasar el ratón */
 
-/* ==========================================================================
-   PIE DE PÁGINA (FOOTER)
-   ========================================================================== */
-
+/* FOOTER */
 footer {
-  background: var(--blanco);
-  text-align: center;
-  padding: 1.5rem;
-  border-top: 4px solid var(--verde);
-  margin-top: 3rem;
+  background: var(--blanco); /* Define fondo blanco para la barra del pie de página */
+  text-align: center; /* Centra horizontalmente todo el texto del pie de página */
+  padding: 1.5rem; /* Agrega un espacio interno de relleno en el pie de página */
+  border-top: 4px solid var(--verde); /* Agrega un borde superior verde decorativo */
+  margin-top: 3rem; /* Crea un margen amplio para separarlo del contenido superior */
 }
 
-/* ==========================================================================
-   DISEÑO RESPONSIVO (MEDIA QUERIES)
-   ========================================================================== */
-
-/* Adaptaciones para dispositivos móviles y pantallas pequeñas (ancho máximo de 768px) */
+/* RESPONSIVO */
 @media (max-width: 768px) {
-  /* Alinea el menú de navegación en columna cuando el espacio horizontal es limitado */
-  .nav-container { 
-    flex-direction: column; 
-    gap: 0.8rem; 
-  }
-
-  /* Ajusta el tamaño de título principal en pantallas pequeñas */
-  .hero-pagina h1 { 
-    font-size: 1.8rem; 
-  }
-
-  /* Desactiva el flotado de las imágenes en las biografías para centrarlas sobre el texto */
-  .bio-card img { 
-    float: none; 
-    display: block; 
-    margin: 0 auto 1rem; 
-  }
+  .nav-container { flex-direction: column; gap: 0.8rem; } /* Cambia el menú a columna en pantallas chicas */
+  .hero-pagina h1 { font-size: 1.8rem; } /* Disminuye el tamaño del título de la portada en móviles */
+  .bio-card img { float: none; display: block; margin: 0 auto 1rem; } /* Centra imágenes en móviles */
 }
