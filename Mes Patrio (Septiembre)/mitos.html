@@ -1,59 +1,89 @@
+<!-- Declaración del tipo de documento HTML5 -->
 <!DOCTYPE html>
+
+<!-- Apertura de la etiqueta HTML especificando el idioma del sitio (Español) -->
 <html lang="es">
 <head>
+    <!-- Definición de la codificación de caracteres para soportar tildes y caracteres especiales -->
     <meta charset="UTF-8">
+    
+    <!-- Configuración para el diseño responsivo en dispositivos móviles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Título que aparece en la pestaña del navegador -->
     <title>Mitos - Mes Patrio</title>
+    
+    <!-- Carga de la fuente tipográfica "Montserrat" desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Vinculación con la hoja de estilos externa CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Encabezado principal del sitio -->
     <header>
+        <!-- Contenedor flex/grid para estructurar la barra de navegación -->
         <div class="nav-container">
+            
+            <!-- Logotipo del sitio con enlace al inicio -->
             <a href="index.html" class="logo">Mes <span>Patrio</span></a>
+            
+            <!-- Menú de navegación -->
             <nav>
                 <ul>
+                    <!-- Enlaces de navegación entre secciones del sitio -->
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="linea-tiempo.html">Línea de Tiempo</a></li>
                     <li><a href="personajes.html">Personajes</a></li>
                     <li><a href="biografias.html">Biografías</a></li>
+                    <!-- La clase "active" resalta la sección en la que se encuentra el usuario -->
                     <li><a href="mitos.html" class="active">Mitos</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Contenido principal del documento -->
     <main class="contenedor">
+        <!-- Encabezado de la sección actual -->
         <h2 class="titulo-seccion">Mitos del Mes Patrio</h2>
 
+        <!-- Rejilla que agrupa las tarjetas de mitos históricos -->
         <div class="grid-cards">
+            
+            <!-- Tarjeta 1: Mito del cambio de fecha por Porfirio Díaz -->
             <article class="mito-card">
                 <h4>No lo cambió Porfirio Díaz por su cumpleaños</h4>
                 <p>La fiesta se celebraba de noche desde 1840, cuando Porfirio Díaz aún era un niño.</p>
             </article>
 
+            <!-- Tarjeta 2: Mito sobre el Grito de Dolores -->
             <article class="mito-card">
                 <h4>Hidalgo no gritó «¡Viva México!»</h4>
                 <p>Vitoreó a Fernando VII y a la Virgen de Guadalupe. «¡Viva México!» se adoptó años después.</p>
             </article>
 
+            <!-- Tarjeta 3: Mito sobre la existencia del Pípila -->
             <article class="mito-card">
                 <h4>El Pípila no existió individualmente</h4>
                 <p>Se considera una figura simbólica que representa la valentía colectiva de los mineros.</p>
             </article>
 
+            <!-- Tarjeta 4: Mito sobre la forma de gobierno en 1821 -->
             <article class="mito-card">
                 <h4>México no nació como república en 1821</h4>
                 <p>El Acta de Independencia declaró oficialmente la creación del Imperio Mexicano.</p>
             </article>
         </div>
 
+        <!-- Contenedor con botón de retorno al inicio -->
         <div class="volver-container">
             <a href="index.html" class="btn-volver">← Volver al Inicio</a>
         </div>
     </main>
 
+    <!-- Pie de página con los datos de autoría y créditos -->
     <footer>
         <p>Elaborado por: Valeria Dayana Madrid de la Cruz | Grupo:5°J | No.Control: 24308051280862</p>
     </footer>
