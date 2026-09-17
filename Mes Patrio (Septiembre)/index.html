@@ -1,18 +1,35 @@
+<!-- Declaración que especifica al navegador el uso del estándar HTML5 -->
 <!DOCTYPE html>
+
+<!-- Apertura de la etiqueta HTML definiendo el idioma del contenido (Español) -->
 <html lang="es">
 <head>
+    <!-- Definición de la codificación de caracteres para el correcto despliegue de tildes y caracteres especiales -->
     <meta charset="UTF-8">
+    
+    <!-- Título descriptivo que se muestra en la pestaña del navegador -->
     <title>Mes Patrio - Inicio</title>
+    
+    <!-- Enlace para cargar la tipografía externa "Montserrat" desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Vinculación a la hoja de estilos externa CSS -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+    <!-- Encabezado superior de la página principal -->
     <header>
+        <!-- Contenedor alineado para la marca y el menú de navegación -->
         <div class="nav-container">
+            
+            <!-- Logotipo del proyecto con hipervínculo a la página de inicio -->
             <a href="index.html" class="logo">Mes <span>Patrio</span></a>
+            
+            <!-- Estructura del menú de navegación principal -->
             <nav>
                 <ul>
+                    <!-- La clase "active" resalta que actualmente se está en la página principal (Inicio) -->
                     <li><a href="index.html" class="active">Inicio</a></li>
                     <li><a href="linea_tiempo.html">Línea de Tiempo</a></li>
                     <li><a href="personajes.html">Personajes</a></li>
@@ -23,16 +40,22 @@
         </div>
     </header>
 
+    <!-- Contenido principal estructurado como portada u "Hero Section" -->
     <main class="hero hero-pagina">
+        <!-- Títulos de presentación del sitio -->
         <h1>MES PATRIO</h1>
         <h2>SEPTIEMBRE</h2>
+        
+        <!-- Bloque con datos de autoría de la estudiante e imagen distintiva -->
         <div class="autor-box">
             <p><strong>POR:</strong> MADRID DE LA CRUZ VALERIA DAYANA</p>
             <p><strong>No.Control:</strong> 24308051280862</p>
             <p><strong>Grupo:</strong> 5°J</p>
+            <!-- Imagen representativa del escudo nacional -->
             <img src="Aguila_Mexicana.png" width="500" height="500" alt="Escudo mexicano">
         </div>
 
+        <!-- Menú en forma de tarjetas/botones con acceso directo a los módulos principales -->
         <div class="menu-tarjetas">
             <a href="linea-tiempo.html" class="btn-tema"> Línea de Tiempo</a>
             <a href="personajes.html" class="btn-tema"> Personajes Principales</a>
@@ -41,6 +64,7 @@
         </div>
     </main>
 
+    <!-- Pie de página con créditos de la presentación -->
     <footer>
         <p><strong>Presentación del Mes Patrio </strong></p>
         <p>Elaborado por: Valeria Dayana Madrid de la Cruz | Grupo:5°J | No.Control: 24308051280862</p>
